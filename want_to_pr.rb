@@ -3,20 +3,21 @@
 # ③左の数字が右の数字よりも大きかった場合、変数に入れて移動
 
 def bubble_sort(ary)
-  p [63,56,72,18]
+  p ary
   length = ary.length
-  (1..length).each do  |number| 
-    (1..(length-number)).each  do |latter| 
-      former = latter - 1 
+  (1..length).each  do |i| 
+    (1..(length - i)).each  do |index|
+      former = index - 1 
       puts ary[former]
-      if ary[former] > ary[latter]
+      if ary[former] > ary[index]
         replace = ary[former]
-        ary[former] = ary[latter]
-        ary[latter] = replace
-        puts ary[latter]
+        ary[former] = ary[index]
+        ary[index] = replace
+        puts ary[index]
       end 
     end
   end
-  return  ary
+  return ary
 end
+
 p bubble_sort([63,56,72,18])
