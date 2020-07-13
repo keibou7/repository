@@ -5,7 +5,7 @@
 def bubble_sort(ary)
   p ary
   length = ary.length
-  (1..length).each  do |i| 
+  (1..(length-1)).each  do |i| 
     (1..(length - i)).each  do |index|
       former = index - 1 
       puts ary[former]
