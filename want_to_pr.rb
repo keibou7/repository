@@ -10,14 +10,14 @@ def bubble_sort(ary)
       former = index - 1 
       puts ary[former]
       if ary[former] > ary[index]
-        replace = ary[former]
-        ary[former] = ary[index]
-        ary[index] = replace
+        replace      = ary[former]
+        ary[former]  = ary[index]
+        ary[index]   = replace
         puts ary[index]
       end 
     end
   end
-  return ary
+  ary
 end
 
 p bubble_sort([63,56,72,18])
