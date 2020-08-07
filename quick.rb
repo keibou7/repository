@@ -1,5 +1,4 @@
 def quick_sort(array)
-  p array
   return array if array.length < 2
   pivot = array.shift
   smallers = []
