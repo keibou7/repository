@@ -7,15 +7,15 @@
   monster_attack = [] 
   # 攻撃回数に応じた攻撃力を割り出すくり返しの条件式
   while hp > 0 do
-    n += 1
     if n < 3
       paiza_attack   << 1
       monster_attack << 1
-      hp -= monster_attack[n]
+      hp = hp - monster_attack[n]
     else
       paiza_attack   << monster_attack[n - 1] + monster_attack[n - 2]
       monster_attack << paiza_attack[n - 1] * 2 + paiza_attack[n - 2]
-      hp -= ( paiza_attack[n - 1] * 2 + paiza_attack[n - 2] )
+      hp = hp - ( paiza_attack[n - 1] * 2 + paiza_attack[n - 2] )
     end
+    n += 1
   end
   puts n if hp < 0
