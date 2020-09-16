@@ -36,8 +36,19 @@ class Kindle
     selected = @books[gets.to_i]
     p "#{selected[:name]}が選択されました"
     selected
-    def calc_continued_pages
-      continued_pages = # 現在のページがどこかを計算するメソッド
+
+    def read_book
+      while true do
+        if page.click
+          current_pages = current_pages + 1
+        elsif pages - current_pages == 0
+          current_pages = 1
+          break
+        else
+          continued_pages = current_pages
+          break
+        end
+      end
     end
   end
   kindle = Kindle.new
