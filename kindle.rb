@@ -32,7 +32,7 @@ class Kindle
   def choose_book
     puts '読みたい本を以下から選んでください'
     @books.each_with_index do |book, i|
-      puts "[#{i}] 商品名：#{book[:name]} 出版社：#{product[:library]}"
+      puts "[#{i}] 商品名：#{book[:name]} ページ数：#{book[:pages]}"
     selected = @books[gets.to_i]
     p "#{selected[:name]}が選択されました"
     selected
