@@ -10,6 +10,7 @@ class BookReader
       { name: 'イシューからはじめよ' , review: book_review }
     ]
   end
+
   def select_book_review
     choose_book
     puts '本を読む場合は0、書評を読む場合は1を選択してください'
@@ -25,15 +26,20 @@ class BookReader
         break
       else
         puts '本を読む場合は0、書評を読む場合は1を選択してください'
+      end
     end
   end
+
   def choose_book
     puts '気になる本を以下から選んでください'
     @books.each_with_index do |book, i|
       puts "[#{i}] 書名：#{book[:name]}"
+    end
     selected = @books[gets.to_i]
     p "#{selected[:name]}が選択されました"
     selected
   end
-  bookreader = BookReader.new
-  bookreader.select_book_review
+end
+
+bookreader = BookReader.new
+bookreader.select_book_review
