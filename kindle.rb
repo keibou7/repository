@@ -14,14 +14,14 @@ class Kindle
   def can_read_book
     choose_book
     puts "前回は#{selected[:continued_pages]}ページまで読みましたが、続きから読みますか？"
-    puts '続きから読む場合は1、最初から読む場合は2を選択してください'
+    puts '続きから読む場合は0、最初から読む場合は1を選択してください'
     page_select = gets.to_i
     while true do
-      if page_select == 1
+      if page_select == 0
         puts "続きの#{selected[:continued_pages]}ページから読み始めます"
         continued_pages = continued_pages
         break
-      elsif page_select == 2
+      elsif page_select == 1
         puts '最初のページから読み始めます'
         continued_pages = 1
         break
