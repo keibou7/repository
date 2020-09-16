@@ -28,17 +28,17 @@ class BookReader
 
   def choose_action(book)
     puts '本を読む場合は0、書評を読む場合は1を選択してください'
-    select_num = gets.to_i
+    input = gets.to_i
     while true do
-      if select_num == 0
+      if input == 0
         puts "#{book[:name]}を読みます"
         break
-      elsif select_num == 1
+      elsif input == 1
         puts "#{book[:name]}の書評を読みます"
         break
       else
         puts '本を読む場合は0、書評を読む場合は1を選択してください'
-        select_num = gets.to_i
+        input = gets.to_i
       end
     end
   end
