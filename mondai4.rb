@@ -1,3 +1,5 @@
+# 背の順をクイックソートで並び替えて、何番目に誰が来るかを出力するアプリ
+
 def adjust_order_of_height(ary)
   return ary if ary.length < 2
   pivot = ary.shift
@@ -14,7 +16,12 @@ def adjust_order_of_height(ary)
   adjust_order_of_height(smaller) + [pivot] + adjust_order_of_height(bigger)
 end
 
-ary = [
+def search_order(ary)
+  target = gets.to_i
+  puts "#{target}番目は#{ary[target - 1][:name]}です"
+end
+
+ary1 = [
   {name: '佐藤' , height: 170},
   {name: '高橋' , height: 171},
   {name: '鈴木' , height: 123},
@@ -26,4 +33,7 @@ ary = [
   {name: '中田' , height: 183},
   {name: '日向' , height: 193}
 ]
-p adjust_order_of_height(ary)
+
+ary2 = adjust_order_of_height(ary1)
+puts ary2
+search_order(ary2)
