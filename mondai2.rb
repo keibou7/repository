@@ -1,3 +1,5 @@
+
+
 # マージソートで値を並び替える
 
 def merge_sort(array)

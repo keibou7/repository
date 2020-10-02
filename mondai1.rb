@@ -1,3 +1,4 @@
+
 # クイックソートで値を並び替える
 def quick_sort(ary)
   return ary if ary.length < 2
